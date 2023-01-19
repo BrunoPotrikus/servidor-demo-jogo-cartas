@@ -23,6 +23,7 @@ namespace ServidorDemoJogoCartas.Data
         {
             modelBuilder.ApplyConfiguration(new CategoriaMap());
             modelBuilder.ApplyConfiguration(new PersonagemMap());
+            modelBuilder.ApplyConfiguration(new UsuarioMap());
         }
     }
 }

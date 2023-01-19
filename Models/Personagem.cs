@@ -11,5 +11,6 @@
         public int Fogo { get; set; }
         public string Descricao { get; set; }
         public Categoria Categoria { get; set; }
+        public IList<Usuario> Usuarios { get; set; }
     }
 }
