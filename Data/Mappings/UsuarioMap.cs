@@ -12,23 +12,35 @@ namespace ServidorDemoJogoCartas.Data.Mappings
 
             builder.HasKey(x => x.Id);
 
-            builder.Property(x => x.Nome.NomeUsuario)
+            builder.Property(x => x.Nome)
                 .IsRequired()
                 .HasColumnName("Nome")
                 .HasColumnType("NVARCHAR")
                 .HasMaxLength(60);
 
-            builder.Property(x => x.Nome.Sobrenome)
+            builder.Property(x => x.Sobrenome)
                 .IsRequired()
                 .HasColumnName("Sobrenome")
                 .HasColumnType("NVARCHAR")
                 .HasMaxLength(60);
 
-            builder.Property(x => x.Nome.Apelido)
+            builder.Property(x => x.Apelido)
                 .IsRequired()
                 .HasColumnName("Apelido")
                 .HasColumnType("NVARCHAR")
                 .HasMaxLength(60);
+
+            builder.Property(x => x.Email)
+                .IsRequired()
+                .HasColumnName("Email")
+                .HasColumnType("NVARCHAR")
+                .HasMaxLength(60);
+
+            builder.Property(x => x.Senha)
+                .IsRequired()
+                .HasColumnName("Senha")
+                .HasColumnType("NVARCHAR")
+                .HasMaxLength(16);
 
             builder.HasMany(x => x.Personagens)
                 .WithMany(x => x.Usuarios)
