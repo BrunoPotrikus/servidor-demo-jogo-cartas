@@ -63,7 +63,25 @@ public class Program
         //    }
         //}
 
-        var usuarios = ListaUsuarios(context, 0, 25);
+        //var usuarios = ListaUsuarios(context, 0, 25);
+
+        var usuario = context.Usuarios.FirstOrDefault(x => x.Apelido == "BrunoPotrikus");
+        var personagem = context.Personagens
+                                .AsNoTracking()
+                                //.Where(x => x.Nome == "Anúbis")
+                                .FirstOrDefault(x => x.Id == Guid.Parse("c9268ce7-7b96-41e8-afc7-b6ab1014ba7d"));
+        var categoria = context.Categorias.FirstOrDefault(x => x.Id == personagem.CategoriaId);
+
+        Console.WriteLine($"Nome: {personagem?.Nome} \n" +
+                          $"Categoria: {categoria.Titulo} \n" +
+                          $"Descrição: {personagem?.Descricao} \n" +
+                          $"Magia: {personagem?.Magia} \n" +
+                          $"Força: {personagem?.Forca} \n" +
+                          $"Fogo: {personagem?.Fogo}");
+
+        usuario.Personagens.Add(personagem);
+        context.Usuarios.Update(usuario);
+        context.SaveChanges();
     }
 
     public static List<Usuario> ListaUsuarios(DataContext context, int skip = 0, int take = 25)
