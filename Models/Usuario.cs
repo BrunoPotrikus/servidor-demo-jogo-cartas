@@ -10,6 +10,6 @@ namespace ServidorDemoJogoCartas.Models
         public string Apelido { get; set; }
         public string Email { get; set; }
         public string Senha { get; set; }
-        public IList<Personagem> Personagens { get; set; }
+        public IList<Personagem>? Personagens { get; set; }
     }
 }

@@ -8,6 +8,7 @@ namespace ServidorDemoJogoCartas.Data
     {
         public DbSet<Categoria> Categorias { get; set; }
         public DbSet<Personagem> Personagens { get; set; }
+        public DbSet<Usuario> Usuarios { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder options)
         {
