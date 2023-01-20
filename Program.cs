@@ -63,7 +63,7 @@ public class Program
         //    }
         //}
 
-        
+        var usuarios = ListaUsuarios(context, 0, 25);
     }
 
     public static List<Usuario> ListaUsuarios(DataContext context, int skip = 0, int take = 25)
